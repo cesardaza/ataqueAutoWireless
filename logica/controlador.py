@@ -36,7 +36,7 @@ class Controlador:
 
 	#escanea las redes wifi disponibles y las cuarda en self._aps
 	def obtenerAps(self):
-		cell = Cell.all('wlan0')
+		cell = Cell.all('wlan1')
 		for x in xrange(0,len(cell)):
 			if self.buscarRedFirebase(str(cell[x].address)) == False:
 				essid = str(cell[x].address)

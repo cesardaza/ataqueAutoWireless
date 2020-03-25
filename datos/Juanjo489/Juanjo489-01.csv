@@ -1,0 +1,9 @@
+
+BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
+20:10:7A:84:2F:A4, 2020-03-25 07:03:32, 2020-03-25 07:05:41,  6,  54, WPA2, CCMP, PSK, -74,     1171,     2906,   0.  0.  0.  0,   9, Juanjo489, 
+
+Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
+88:B4:A6:C8:52:87, 2020-03-25 07:03:34, 2020-03-25 07:04:28, -82,       79, 20:10:7A:84:2F:A4,
+DC:66:72:38:99:1D, 2020-03-25 07:03:59, 2020-03-25 07:05:26, -91,     2780, 20:10:7A:84:2F:A4,
+90:73:5A:56:A6:65, 2020-03-25 07:03:50, 2020-03-25 07:05:27, -77,       91, 20:10:7A:84:2F:A4,
+

