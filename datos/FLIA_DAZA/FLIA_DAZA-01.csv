@@ -1,8 +1,0 @@
-
-BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
-90:58:51:98:ED:1B, 2020-03-25 07:06:56, 2020-03-25 07:09:05,  9,  54, WPA2, CCMP, PSK, -60,     1150,      441,   0.  0.  0.  0,   9, FLIA DAZA, 
-
-Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
-A8:3E:0E:1B:5C:7E, 2020-03-25 07:07:04, 2020-03-25 07:09:04, -75,      445, 90:58:51:98:ED:1B,
-00:56:CD:50:2C:1B, 2020-03-25 07:07:00, 2020-03-25 07:08:45, -72,       57, 90:58:51:98:ED:1B,
-
