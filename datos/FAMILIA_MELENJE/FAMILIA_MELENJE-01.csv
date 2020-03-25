@@ -1,6 +1,0 @@
-
-BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
-44:32:C8:E3:88:00, 2020-03-24 00:49:20, 2020-03-24 00:51:29, 11, 195, WPA2 WPA, CCMP TKIP, PSK, -87,     1153,        0,   0.  0.  0.  0,  15, FAMILIA MELENJE, 
-
-Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
-

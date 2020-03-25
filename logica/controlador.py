@@ -65,10 +65,18 @@ class Controlador:
 		return redesWep
 
 	def getRedesWpa(self):
-		redesWep = []
+		redesWpa = []
 		for x in self.aps():
 			if x.tipo() == 'wpa':
-				redesWep.append(x)
-		return redesWep
+				redesWpa.append(x)
+		return redesWpa
+
+	def getRedesWpa2(self):
+		redesWpa2 = []
+		for x in self.aps():
+			if x.tipo() == 'wpa2':
+				redesWpa2.append(x)
+		return redesWpa2
+
 
 		
