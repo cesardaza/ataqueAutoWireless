@@ -51,23 +51,21 @@ def parpadear(arg):
 		time.sleep(0.5)	
 
 if __name__ == '__main__':
-	
+
+	#Escaneo y creacion de directorios y registro en firebase de las redes wifi
 	ledVerde = threading.Thread(target=parpadear,args=(18,))
 	ledVerde.start()
-	time.sleep(5)
-
 	control = controlador.Controlador()
 	control.obtenerAps()
 	control.crearDirectorios()
 	control.guardarEnFirebase()
-
 	ledVerde.do_run = False
 	ledVerde.join()
 	prenderVerde()
-	
+
+	#Ataque a redes WEP
 	ledAmarillo = threading.Thread(target=parpadear,args=(23,))
 	ledAmarillo.start()
-	time.sleep(5)
 	redeswep = control.getRedesWep()
 	for x in redeswep:
 		ataqueWep = wep.Wep(x)
@@ -76,9 +74,9 @@ if __name__ == '__main__':
 	ledAmarillo.join()
 	prenderAmarillo()
 
+	#Ataque a redes WPA
 	ledAzul = threading.Thread(target=parpadear,args=(22,))
 	ledAzul.start()
-	time.sleep(5)
 	redesWpa = control.getRedesWpa()
 	for x in redesWpa:
 		ataqueWpa = wpa.Wpa(x)
@@ -87,9 +85,9 @@ if __name__ == '__main__':
 	ledAzul.join()
 	prenderAzul()
 	
+	#Ataque a redes WPA2
 	ledRojo = threading.Thread(target=parpadear,args=(25,))
 	ledRojo.start()
-	time.sleep(5)
 	redesWpa2 = control.getRedesWpa2()
 	for x in redesWpa2:
 		ataqueWpa2 = wpa2.Wpa2(x)
@@ -100,7 +98,6 @@ if __name__ == '__main__':
 	
 	ledBlanco = threading.Thread(target=parpadear,args=(12,))
 	ledBlanco.start()
-	time.sleep(5)
 	ledBlanco.do_run = False
 	ledBlanco.join()
 	prenderBlanco()
